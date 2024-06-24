@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #f9ebd9;
+  background: url("./assets/paw-background.png") #f9ebd9;
   @apply font-poppins
 }
 
@@ -19,5 +19,5 @@ body {
 }
 
 .btn {
-  @apply bg-[#090603] text-white rounded-md hover:opacity-70 transition-all duration-300
+  @apply bg-[#090603] text-white hover:opacity-70 transition-all duration-300 z-10
 }
