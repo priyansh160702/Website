@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
@@ -7,6 +7,16 @@ import ellipse1 from "../assets/Ellipse 1.png";
 import ellipse2 from "../assets/Ellipse2.png";
 
 const HomePage = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <Fragment>
       <section className="container flex items-center h-[60vh] relative z-10">
@@ -16,7 +26,10 @@ const HomePage = () => {
             Delighting pet owners with stylish and comfortable accessories for
             their furry friends.
           </p>
-          <button className="btn w-[300px] py-5  rounded-full text-xl mt-8 ml-[10rem] shadow-md shadow-gray-600">
+          <button
+            className="btn w-[300px] py-5 rounded-full text-xl mt-8 ml-[10rem] shadow-md shadow-gray-600"
+            onClick={handleButtonClick}
+          >
             Get Notified
           </button>
         </div>
@@ -36,6 +49,31 @@ const HomePage = () => {
 
       <img src={ellipse1} alt="" className="absolute -top-[5rem] right-0" />
       <img src={ellipse2} alt="" className="absolute top-[18.7rem] w-[24rem]" />
+
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-8 rounded-lg shadow-lg text-white">
+            <h2 className="text-2xl font-semibold mb-4">Get Notified!</h2>
+            <p className="mb-4">
+              Enter your email below to be notified when we launch.
+            </p>
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="w-full p-2 rounded mb-4 text-black"
+            />
+            <button className="btn w-full py-2 rounded bg-white text-black font-semibold">
+              Submit
+            </button>
+            <button
+              className="btn w-full py-2 rounded bg-red-500 text-white font-semibold mt-4"
+              onClick={handleClosePopup}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </Fragment>
   );
 };
