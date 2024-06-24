@@ -52,7 +52,12 @@ const HomePage = () => {
 
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-8 rounded-lg shadow-lg text-white">
+          <div
+            className="p-8 rounded-lg shadow-lg text-white"
+            style={{
+              backgroundColor: "#E9AB0B",
+            }}
+          >
             <h2 className="text-2xl font-semibold mb-4">Get Notified!</h2>
             <p className="mb-4">
               Enter your email below to be notified when we launch.
@@ -62,11 +67,11 @@ const HomePage = () => {
               placeholder="Your email address"
               className="w-full p-2 rounded mb-4 text-black"
             />
-            <button className="btn w-full py-2 rounded bg-white text-black font-semibold">
+            <button className="btn w-full py-2 rounded-full bg-white text-black font-semibold">
               Submit
             </button>
             <button
-              className="btn w-full py-2 rounded bg-red-500 text-white font-semibold mt-4"
+              className="btn w-full py-2 rounded-full bg-red-500 text-white font-semibold mt-4"
               onClick={handleClosePopup}
             >
               Close
