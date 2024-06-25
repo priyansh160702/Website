@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import "../styles/fonts.css";
 
 import pet1 from "../assets/pet1.png";
 import ellipse1 from "../assets/Ellipse 1.png";
@@ -19,15 +20,17 @@ const HomePage = () => {
 
   return (
     <Fragment>
-      <section className="container flex items-center h-[60vh] relative z-10">
+      <section className="container md:flex items-center h-[60vh] relative z-10">
         <div className="w-1/2">
-          <h1 className="text-[5rem] font-medium">COMING SOON!</h1>
+          <h1 className="md:text-[5rem] font-medium font-brigast">
+            COMING SOON!
+          </h1>
           <p className="text-xl font-medium">
             Delighting pet owners with stylish and comfortable accessories for
             their furry friends.
           </p>
           <button
-            className="btn w-[300px] py-5 rounded-full text-xl mt-8 ml-[10rem] shadow-md shadow-gray-600"
+            className="btn md:w-[300px] py-5 rounded-full text-xl mt-8 ml-[10rem] shadow-md shadow-gray-600"
             onClick={handleButtonClick}
           >
             Get Notified
@@ -38,7 +41,7 @@ const HomePage = () => {
           <img
             src={pet1}
             alt=""
-            className="w-[30rem] absolute -top-[3.5rem] right-0"
+            className="w-[10rem] md:w-[30rem] absolute -top-[3.5rem] right-0"
           />
         </div>
       </section>
@@ -47,8 +50,16 @@ const HomePage = () => {
         ploofypaws@gmail.com
       </p>
 
-      <img src={ellipse1} alt="" className="absolute -top-[5rem] right-0" />
-      <img src={ellipse2} alt="" className="absolute top-[18.7rem] w-[24rem]" />
+      <img
+        src={ellipse1}
+        alt=""
+        className="absolute md:-top-[5rem] md:right-0"
+      />
+      <img
+        src={ellipse2}
+        alt=""
+        className="absolute md:top-[18.7rem] md:w-[24rem]"
+      />
 
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
